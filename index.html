@@ -7,25 +7,65 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <nav class="lang-switch">
-        <a href="index.html">PL</a> | <a href="en/index.html">EN</a>
-    </nav>
-
-    <header class="hero">
-        <img src="img/tlo_top.png" alt="KubusubuK background" class="hero-img">
-        <h1>KubusubuK</h1>
-        <p class="tagline">Technologia i Sztuka w jednym miejscu, zobacz co możemy stworzyć razem!</p>
-    </header>
-
-    <section class="about">
-        <h2>Kim jestem?</h2>
-        <p>Tu wpisz swój fajny opis... Buduję, tworzę, projektuję.</p>
-    </section>
-
-    <div class="nav-buttons">
-        <a href="#tech" class="btn">Projekty Techniczne</a>
-        <a href="#art" class="btn">Projekty Media/Art</a>
+<nav class="navbar">
+    <div class="nav-center">
+        <a href="#hero">KubusubuK</a>
+        <a href="#about">O mnie</a>
+        <a href="#projects">Projekty</a>
+        <a href="#work">Nad czym pracuję</a>
+        <a href="#contact">Kontakt</a>
     </div>
+    <div class="nav-right">
+        <a href="index.html">PL</a> | <a href="en/index.html">EN</a>
+    </div>
+</nav>
 
+<header id="hero" class="full-hero">
+    <div class="hero-content">
+        <h1>KubusubuK</h1>
+        <p class="quote">"Tworzę tam, gdzie logika spotyka wyobraźnię."</p>
+        <div class="scroll-arrow">↓</div>
+    </div>
+</header>
+
+<section id="about" class="section">
+    <div class="about-container">
+        <img src="img/twoje-foto.jpg" alt="To ja" class="about-img">
+        <div class="about-text">
+            <h2>Kim jestem?</h2>
+            <p>Tu wpiszesz swoją historię... Profesjonalnie, ale z charakterem.</p>
+        </div>
+    </div>
+</section>
+
+<section id="projects" class="projects-hero">
+    <div class="projects-overlay">
+        <div class="project-btns">
+            <a href="tech.html" class="big-btn">Projekty Techniczne</a>
+            <a href="art.html" class="big-btn">Projekty Artystyczne</a>
+        </div>
+    </div>
+</section>
+
+<section id="work" class="section">
+    <h2>Nad czym obecnie pracuję?</h2>
+    <div class="progress-box">
+        <img src="img/ongoing-project.jpg" alt="Aktualny projekt">
+        <p>Aktualnie rozwijam... [Postępy: 70%]</p>
+    </div>
+</section>
+
+<footer id="contact" class="section">
+    <h2>Zostańmy w kontakcie</h2>
+    <div class="social-icons">
+        <a href="#">YT</a> <a href="#">IG</a> <a href="#">FB</a> <a href="#">LN</a>
+    </div>
+    <form action="https://formspree.io/f/TWÓJ_ID" method="POST" class="contact-form">
+        <input type="email" name="email" placeholder="Twój e-mail" required>
+        <textarea name="message" placeholder="Twoja wiadomość"></textarea>
+        <button type="submit">Wyślij</button>
+    </form>
+    <p class="mission">Moim celem jest... [Twoje podsumowanie]</p>
+</footer>
     </body>
 </html>
