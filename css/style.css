@@ -98,6 +98,51 @@ body { font-family: 'Inter', sans-serif; overflow-x: hidden; scroll-behavior: sm
     100% { transform: translateX(0); }
 }
 
+
+/* Dodatek do przycisków i ich tła*/
+.projects-hero {
+    height: 70vh;
+    width: 100%;
+    /* Dodajemy tło z silniejszym przyciemnieniem, aby białe przyciski "wyskoczyły" do przodu */
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('../img/sneak-peek.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Dodaje efekt paralaksy - tło przesuwa się wolniej */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.project-btns-container {
+    display: flex;
+    gap: 80px; /* Większy odstęp między przyciskami */
+    width: 100%;
+    justify-content: center;
+}
+
+.big-btn {
+    display: inline-block;
+    padding: 25px 50px;
+    border: 2px solid #fff;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 4px; /* Większy rozstaw liter - bardziej inżynieryjny/czysty styl */
+    font-weight: 700;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Płynniejsza, sprężysta animacja */
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(5px); /* Efekt oszronionego szkła na przyciskach */
+}
+
+.big-btn:hover {
+    background: #fff;
+    color: #000;
+    transform: scale(1.1); /* Przycisk wyraźnie powiększa się po najechaniu */
+    box-shadow: 0 0 30px rgba(255,255,255,0.4);
+}
+
 /* 6. PROJEKTY */
 .projects-hero {
     height: 60vh; width: 100%;
