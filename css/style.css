@@ -33,7 +33,7 @@ body {
     padding: 0 5%;
     z-index: 1000;
     transition: all 0.4s ease-in-out;
-    background: transparent;
+    background: transparent !important;
     border: none !important; /* Całkowite usunięcie obramowania */
     outline: none;
 }
@@ -70,6 +70,9 @@ body {
     font-weight: 500;
     font-size: 0.9rem;
     transition: 0.3s;
+
+    /* Poprawa czytelności na obrazie tła */
+    text-shadow: 0 2px 6px rgba(0,0,0,0.6);
 }
 
 .navbar.scrolled a {
@@ -91,18 +94,41 @@ body {
     margin-top: 0;
     width: 100%;
     height: 100vh; /* Zajmuje 100% wysokości okna */
-    /* Zwróć uwagę na ścieżkę: ../img/ oznacza wyjście z folderu css i wejście do img */
-    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('../img/hero-bg.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed; /* Efekt lekkiej paralaksy */
+    position: relative;
+    background: none; /* Tło ustawiamy przez pseudo-element, dzięki temu łatwiej kontrolować overlay */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
     color: white;
+}
+
+/* Warstwa obrazu tła — umieszczona za treścią, ale nad białym backgroundem body */
+.full-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0; /* top:0; right:0; bottom:0; left:0; */
+    background-image: url('../img/hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 0;
+}
+
+/* Delikatna ciemna nakładka żeby tekst był czytelny; łatwo można zmniejszyć opacity jeśli zdjęcie ma być jaśniejsze */
+.full-hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35));
+    z-index: 1;
+}
+
+/* Treść nad warstwami tła */
+.hero-content {
+    position: relative;
+    z-index: 2;
 }
 
 /* Stylizacja napisu głównego */
