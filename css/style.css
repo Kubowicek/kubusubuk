@@ -88,23 +88,63 @@ body {
 
 /* 3. HERO SECTION (Zdjęcie na cały ekran) */
 .full-hero {
-    margin-top: 0; /* Kluczowe: zdjęcie zaczyna się od 0 */
-    height: 100vh;
+    margin-top: 0;
     width: 100%;
-    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('../img/hero-bg.jpg');
+    height: 100vh; /* Zajmuje 100% wysokości okna */
+    /* Zwróć uwagę na ścieżkę: ../img/ oznacza wyjście z folderu css i wejście do img */
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('../img/hero-bg.jpg');
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Efekt lekkiej paralaksy */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
+    color: white;
 }
 
+/* Stylizacja napisu głównego */
 .hero-content h1 {
-    font-size: clamp(3rem, 10vw, 6rem); /* Responsywna wielkość napisu */
-    letter-spacing: 10px;
+    font-size: clamp(3rem, 8vw, 6rem);
+    letter-spacing: 15px; /* Duży rozstaw dla elegancji */
     text-transform: uppercase;
+    font-weight: 700;
     margin-bottom: 10px;
+    opacity: 0; /* Na start niewidoczne do animacji */
+    animation: fadeInText 1.5s ease-out forwards;
+    animation-delay: 0.5s;
+}
+
+.hero-content .quote {
+    font-size: 1.2rem;
+    font-weight: 300;
+    letter-spacing: 3px;
+    opacity: 0;
+    animation: fadeInText 1.5s ease-out forwards;
+    animation-delay: 1s;
+}
+
+@keyframes fadeInText {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Animowana strzałka */
+.scroll-arrow {
+    position: absolute;
+    bottom: 40px;
+    font-size: 2.5rem;
+    color: white;
+    cursor: pointer;
+    animation: pulseArrow 2s infinite;
+}
+
+@keyframes pulseArrow {
+    0% { transform: translateY(0); opacity: 0.5; }
+    50% { transform: translateY(10px); opacity: 1; }
+    100% { transform: translateY(0); opacity: 0.5; }
 }
 
 .quote {
