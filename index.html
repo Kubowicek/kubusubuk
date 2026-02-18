@@ -4,18 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KubusubuK | Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <nav class="navbar" id="navbar">
-        <div class="nav-side"></div> <div class="nav-center">
+        <div class="nav-side"></div> 
+        <div class="nav-center">
             <a href="#hero">KubusubuK</a>
             <a href="#about">O mnie</a>
             <a href="#projects">Projekty</a>
-            <a href="#work">Nad czym pracuję</a>
+            <a href="#work">W toku</a>
             <a href="#contact">Kontakt</a>
         </div>
-
         <div class="nav-side nav-right">
             <a href="index.html" class="lang-link">PL</a>
             <span class="sep">|</span>
@@ -23,57 +24,71 @@
         </div>
     </nav>
 
-<header id="hero" class="full-hero">
-    <div class="hero-content">
-        <h1>KubusubuK</h1>
-        <p class="quote">"Tworzę tam, gdzie logika spotyka wyobraźnię."</p>
-        <div class="scroll-arrow">↓</div>
-    </div>
-</header>
-
-<section id="about" class="section">
-    <div class="about-container">
-        <img src="img/twoje-foto.jpg" alt="To ja" class="about-img">
-        <div class="about-text">
-            <h2>Kim jestem?</h2>
-            <p>Tu wpiszesz swoją historię... Profesjonalnie, ale z charakterem.</p>
+    <header id="hero" class="full-hero">
+        <div class="hero-content">
+            <h1>KubusubuK</h1>
+            <p class="quote">"Tworzę tam, gdzie logika spotyka wyobraźnię."</p>
+            <div class="scroll-arrow">↓</div>
         </div>
-    </div>
-</section>
+    </header>
 
-<section id="projects" class="projects-hero">
-    <div class="projects-overlay">
-        <div class="project-btns">
+    <section id="about" class="section about-split">
+        <div class="about-img-wrapper">
+            <img src="img/twoje-foto.jpg" alt="To ja" class="img-9-16">
+        </div>
+        <div class="about-description">
+            <h2>Kim jestem?</h2>
+            <p>Moja droga to balansowanie między precyzją kodu a wizją artystyczną. W branży tech szukam rozwiązań, w sztuce — emocji.</p>
+        </div>
+    </section>
+
+    <section id="projects" class="projects-hero">
+        <div class="project-btns-container">
             <a href="tech.html" class="big-btn">Projekty Techniczne</a>
             <a href="art.html" class="big-btn">Projekty Artystyczne</a>
         </div>
-    </div>
-</section>
+    </section>
 
-<section id="work" class="section">
-    <h2>Nad czym obecnie pracuję?</h2>
-    <div class="progress-box">
-        <img src="img/ongoing-project.jpg" alt="Aktualny projekt">
-        <p>Aktualnie rozwijam... [Postępy: 70%]</p>
-    </div>
-</section>
+    <section id="work" class="section work-split">
+        <div class="slider-container">
+            <div class="slider">
+                <img src="img/work1.jpg" class="img-9-16" alt="Projekt 1">
+                <img src="img/work2.jpg" class="img-9-16" alt="Projekt 2">
+                <img src="img/work3.jpg" class="img-9-16" alt="Projekt 3">
+            </div>
+        </div>
+        <div class="work-description">
+            <h2>Nad czym obecnie pracuję?</h2>
+            <p>Aktualnie rozwijam autorski system wizualizacji danych połączony z eksperymentalnym montażem wideo. To projekt, który testuje granice mojej cierpliwości i kreatywności.</p>
+        </div>
+    </section>
 
-<footer id="contact" class="section">
-    <h2>Zostańmy w kontakcie</h2>
-    <div class="social-icons">
-        <a href="#">YT</a> <a href="#">IG</a> <a href="#">FB</a> <a href="#">LN</a>
-    </div>
-    <form action="https://formspree.io/f/TWÓJ_ID" method="POST" class="contact-form">
-        <input type="email" name="email" placeholder="Twój e-mail" required>
-        <textarea name="message" placeholder="Twoja wiadomość"></textarea>
-        <button type="submit">Wyślij</button>
-    </form>
-    <p class="mission">Moim celem jest... [Twoje podsumowanie]</p>
-</footer>
+    <footer id="contact" class="section">
+        <h2>Zostańmy w kontakcie</h2>
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+        </div>
+        <form action="https://formspree.io/f/TWOJ_ID" method="POST" class="contact-form">
+            <input type="email" name="email" placeholder="Twój e-mail" required>
+            <textarea name="message" placeholder="Twoja wiadomość"></textarea>
+            <button type="submit">Wyślij wiadomość</button>
+        </form>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2026 KubusubuK | Designed with precision</p>
+            <div class="status-widget">
+                <span class="status-dot"></span>
+                <span class="status-text">Status: Szukam nowych wyzwań</span>
+            </div>
+        </div>
+    </footer>
+
     <script>
         window.onscroll = function() {
             var nav = document.getElementById('navbar');
-            // Jeśli przewinięto więcej niż 80% wysokości okna (zdjęcie Hero)
             if (window.pageYOffset > (window.innerHeight * 0.8)) {
                 nav.classList.add("scrolled");
             } else {
@@ -81,5 +96,5 @@
             }
         };
     </script>
-    </body>
+</body>
 </html>

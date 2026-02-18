@@ -1,260 +1,63 @@
-/* 1. RESET I PODSTAWY */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+/* 1. RESET */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Inter', sans-serif; overflow-x: hidden; scroll-behavior: smooth; }
 
-body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    line-height: 1.6;
-    color: #1a1a1a;
-    background-color: #fff;
-    scroll-behavior: smooth; /* Płynne przewijanie do sekcji */
-}
-
-/* 2. NAWIGACJA  */
-/* RESET - to usunie białą linię na samej górze i boki */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
+/* 2. NAWIGACJA (Tak jak chciałeś, +10% na górze) */
 .navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 90px; 
-    display: flex;
-    align-items: center;
-    justify-content: space-between; /* To w połączeniu z flex:1 niżej wycentruje środek */
-    padding: 0 5%;
-    z-index: 1000;
-    transition: all 0.4s ease-in-out;
-    background: transparent !important;
-    border: none !important; /* Całkowite usunięcie obramowania */
-    outline: none;
+    position: fixed; top: 0; width: 100%; height: 100px; /* +10% */
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 5%; z-index: 1000; transition: 0.4s; background: transparent;
 }
+.navbar.scrolled { background: white; height: 65px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+.nav-side { flex: 1; }
+.nav-center { flex: 2; display: flex; justify-content: center; gap: 30px; }
+.nav-right { display: flex; justify-content: flex-end; }
+.navbar a, .navbar .sep { color: white; text-decoration: none; font-weight: 500; transition: 0.3s; }
+.navbar.scrolled a { color: #1a1a1a; }
 
-.navbar.scrolled {
-    background: rgba(255, 255, 255, 0.98);
-    height: 65px; 
-    box-shadow: 0 2px 15px rgba(0,0,0,0.05);
-    border-bottom: 1px solid #eee; /* Linia pojawia się dopiero po przewinięciu */
-}
-
-/* TRZY RÓWNE CZĘŚCI DLA IDEALNEGO ŚRODKA */
-.nav-side {
-    flex: 1; 
-    display: flex;
-    align-items: center;
-}
-
-.nav-center {
-    flex: 2; /* Środek jest szerszy, ale dzięki flex:1 po bokach - idealnie wycentrowany */
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-}
-
-.nav-right {
-    justify-content: flex-end;
-}
-
-/* KOLORY TEKSTU I SEPARATORA */
-.navbar a, .navbar .sep {
-    color: white; /* Wszystko białe na górze */
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 0.9rem;
-    transition: 0.3s;
-
-    /* Poprawa czytelności na obrazie tła */
-    text-shadow: 0 2px 6px rgba(0,0,0,0.6);
-}
-
-.navbar.scrolled a {
-    color: #1a1a1a; /* Ciemne po przewinięciu */
-}
-
-.navbar.scrolled .sep {
-    color: #ccc; /* Separator robi się szary na białym tle */
-}
-
-.lang-link {
-    font-size: 0.85rem;
-    font-weight: 600;
-    letter-spacing: 1px;
-}
-
-/* 3. HERO SECTION (Zdjęcie na cały ekran) */
+/* 3. HERO (Naprawione tło) */
 .full-hero {
-    margin-top: 0;
-    width: 100%;
-    height: 100vh; /* Zajmuje 100% wysokości okna */
-    position: relative;
-    background: none; /* Tło ustawiamy przez pseudo-element, dzięki temu łatwiej kontrolować overlay */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: white;
+    height: 100vh; width: 100%;
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('../img/hero-bg.jpg') no-repeat center center;
+    background-size: cover; display: flex; flex-direction: column; justify-content: center; align-items: center; color: white;
+}
+.hero-content h1 { font-size: 5rem; letter-spacing: 15px; text-transform: uppercase; }
+
+/* 4. SEKCJE SPLIT (9:16 Zdjęcia) */
+.section { padding: 80px 10%; }
+.about-split, .work-split { display: flex; align-items: center; gap: 50px; text-align: left; }
+.img-9-16 {
+    width: 100%; max-width: 250px; /* 1/4 szerokości kontenera */
+    aspect-ratio: 9/16; object-fit: cover; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
 
-/* Warstwa obrazu tła — umieszczona za treścią, ale nad białym backgroundem body */
-.full-hero::before {
-    content: "";
-    position: absolute;
-    inset: 0; /* top:0; right:0; bottom:0; left:0; */
-    background-image: url('../img/hero-bg.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    z-index: 0;
-}
-
-/* Delikatna ciemna nakładka żeby tekst był czytelny; łatwo można zmniejszyć opacity jeśli zdjęcie ma być jaśniejsze */
-.full-hero::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35));
-    z-index: 1;
-}
-
-/* Treść nad warstwami tła */
-.hero-content {
-    position: relative;
-    z-index: 2;
-}
-
-/* Stylizacja napisu głównego */
-.hero-content h1 {
-    font-size: clamp(3rem, 8vw, 6rem);
-    letter-spacing: 15px; /* Duży rozstaw dla elegancji */
-    text-transform: uppercase;
-    font-weight: 700;
-    margin-bottom: 10px;
-    opacity: 0; /* Na start niewidoczne do animacji */
-    animation: fadeInText 1.5s ease-out forwards;
-    animation-delay: 0.5s;
-}
-
-.hero-content .quote {
-    font-size: 1.2rem;
-    font-weight: 300;
-    letter-spacing: 3px;
-    opacity: 0;
-    animation: fadeInText 1.5s ease-out forwards;
-    animation-delay: 1s;
-}
-
-@keyframes fadeInText {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-/* Animowana strzałka */
-.scroll-arrow {
-    position: absolute;
-    bottom: 40px;
-    font-size: 2.5rem;
-    color: white;
-    cursor: pointer;
-    animation: pulseArrow 2s infinite;
-}
-
-@keyframes pulseArrow {
-    0% { transform: translateY(0); opacity: 0.5; }
-    50% { transform: translateY(10px); opacity: 1; }
-    100% { transform: translateY(0); opacity: 0.5; }
-}
-
-.quote {
-    font-size: 1.2rem;
-    font-style: italic;
-    font-weight: 300;
-    opacity: 0.9;
-}
-
-/* 4. ANIMOWANA STRZAŁKA */
-.scroll-arrow {
-    position: absolute;
-    bottom: 30px;
-    font-size: 2rem;
-    animation: bounce 2s infinite;
-}
-
-@keyframes bounce {
-    0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
-    40% {transform: translateY(-10px);}
-    60% {transform: translateY(-5px);}
-}
-
-/* 5. SEKCJA PROJEKTY (Sneak peak) */
+/* 5. PROJEKTY (Rozsunięte przyciski) */
 .projects-hero {
-    height: 70vh;
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('../img/sneak-peek.jpg');
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    height: 60vh; background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../img/sneak-peek.jpg') center/cover;
+    display: flex; align-items: center; width: 100%;
+}
+.project-btns-container { width: 100%; display: flex; justify-content: space-around; }
+.big-btn { padding: 20px 40px; border: 2px solid white; color: white; text-decoration: none; transition: 0.4s; }
+.big-btn:hover { background: white; color: black; }
+
+/* 6. SLIDER (Nad czym pracuję) */
+.slider-container { width: 250px; overflow: hidden; border-radius: 8px; }
+.slider { display: flex; width: 300%; animation: slide 10s infinite; }
+.slider img { width: 100%; }
+@keyframes slide {
+    0% { transform: translateX(0); }
+    33% { transform: translateX(-33.33%); }
+    66% { transform: translateX(-66.66%); }
+    100% { transform: translateX(0); }
 }
 
-.big-btn {
-    display: inline-block;
-    padding: 20px 40px;
-    margin: 15px;
-    border: 2px solid #fff;
-    color: #fff;
-    text-decoration: none;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font-weight: bold;
-    transition: all 0.4s ease;
-}
+/* 7. KONTAKT I STOPKA */
+.social-icons { font-size: 2rem; margin-bottom: 30px; }
+.social-icons a { color: #1a1a1a; margin: 0 15px; transition: 0.3s; }
+.social-icons a:hover { color: #007bff; }
+.footer-bottom { margin-top: 50px; border-top: 1px solid #eee; padding-top: 30px; font-size: 0.8rem; }
 
-.big-btn:hover {
-    background: #fff;
-    color: #000;
-    transform: scale(1.05);
-}
-
-/* 6. FORMULARZ KONTAKTOWY */
-.contact-form {
-    max-width: 600px;
-    margin: 40px auto;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-.contact-form input, .contact-form textarea {
-    padding: 15px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    font-family: inherit;
-}
-
-.contact-form button {
-    padding: 15px;
-    background: #000;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.contact-form button:hover {
-    background: #333;
-}
-
-/* KLASA DLA SEKCJI (O MNIE, NAD CZYM PRACUJĘ) */
-.section {
-    padding: 100px 10%;
-    text-align: center;
-}
+/* WIDŻET STATUSU */
+.status-widget { display: inline-flex; align-items: center; margin-top: 15px; background: #f4f4f4; padding: 5px 15px; border-radius: 20px; }
+.status-dot { width: 10px; height: 10px; background: #28a745; border-radius: 50%; margin-right: 10px; animation: pulse 2s infinite; }
+@keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.4; } 100% { opacity: 1; } }
