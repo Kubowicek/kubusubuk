@@ -13,32 +13,56 @@ body {
     scroll-behavior: smooth; /* Płynne przewijanie do sekcji */
 }
 
-/* 2. NAWIGACJA (Sticky) */
+/* 2. NAWIGACJA  */
 .navbar {
     position: fixed;
     top: 0;
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /* Rozsuwa boki, środek zostaje w centrum */
     align-items: center;
     padding: 20px 5%;
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px);
     z-index: 1000;
-    border-bottom: 1px solid #eee;
+    transition: all 0.5s ease; /* Płynne przejście koloru */
+    background: rgba(255, 255, 255, 0); /* Całkowicie przezroczyste na starcie */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.nav-center a, .nav-right a {
-    text-decoration: none;
-    color: #333;
-    margin: 0 15px;
+/* Styl dla menu po przewinięciu (dodawany przez JavaScript) */
+.navbar.scrolled {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 15px 5%;
+    border-bottom: 1px solid #eee;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.nav-left-spacer {
+    flex: 1; /* Zajmuje tyle samo miejsca co prawa strona */
+}
+
+.nav-center {
+    flex: 2; /* Środek zajmuje więcej miejsca i centruje linki */
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+.nav-right {
+    flex: 1;
+    text-align: right;
     font-size: 0.9rem;
-    font-weight: 500;
+}
+
+/* Kolor linków - biały na zdjęciu, ciemny na białym tle */
+.navbar a {
+    text-decoration: none;
+    color: white; /* Domyślnie białe na start */
     transition: 0.3s;
 }
 
-.nav-center a:hover {
-    color: #007AFF; /* Delikatny akcent koloru przy najechaniu */
+.navbar.scrolled a {
+    color: #333; /* Ciemne po przewinięciu */
 }
 
 /* 3. HERO SECTION (Zdjęcie na cały ekran) */
