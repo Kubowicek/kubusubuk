@@ -67,6 +67,35 @@ body { font-family: 'Inter', sans-serif; overflow-x: hidden; scroll-behavior: sm
     display: flex; align-items: t; gap: 60px; justify-content: center;
 }
 
+/* Celujemy precyzyjnie w nagłówek w sekcji "W toku" */
+.work-description h3 {
+    color: #e10600; /* To jest odcień "Racing Red", używany np. w brandingu F1 */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.work-description h3:hover {
+    text-shadow: 0 0 15px rgba(225, 6, 0, 0.4);
+    transition: 0.3s;
+}
+
+/* Stylizacja ikon w opisie projektu WRC */
+.work-description ul li {
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+}
+
+.work-description ul li i {
+    color: #e10600; /* Racing Red - ten sam co w nagłówku */
+    width: 30px;    /* Stała szerokość, żeby tekst był w jednej linii */
+    font-size: 1.3rem;
+    margin-right: 10px;
+    text-align: center;
+    /* Delikatny blask ikon */
+    filter: drop-shadow(0 0 5px rgba(225, 6, 0, 0.2));
+}
+
 /* Kontener na zdjęcie - klucz do naprawy wielkości */
 .about-img-wrapper, .slider-container {
     flex: 0 0 300px; /* Sztywna szerokość 300px */
@@ -160,11 +189,12 @@ body { font-family: 'Inter', sans-serif; overflow-x: hidden; scroll-behavior: sm
 /* 7. KONTAKT I STOPKA */
 #contact { text-align: center; }
 .social-icons a { font-size: 1.8rem; margin: 0 15px; color: #1a1a1a; transition: 0.3s; }
-.social-icons a:hover { color: #555; transform: scale(1.1); }
+.social-icons a:hover { color: #ff0000; transform: scale(1.1); }
 
 .contact-form { max-width: 600px; margin: 40px auto; display: flex; flex-direction: column; gap: 15px; }
 .contact-form input, .contact-form textarea { padding: 15px; border: 1px solid #ddd; background: #f9f9f9; }
 .contact-form button { padding: 15px; background: black; color: white; border: none; cursor: pointer; text-transform: uppercase; letter-spacing: 1px; }
+.contact-form button:hover { background: #e10600; }
 
 /* Nowa czarna stopka na samym dole */
 .footer-bottom {
