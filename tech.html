@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projekty Techniczne | KubusubuK</title>
+    <link rel="icon" type="image/png" href="img/favicon.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="css/projects.css">
 </head>
@@ -25,12 +26,13 @@
 
     <main class="projects-list-container">
         <h1 class="page-title">Projekty Techniczne</h1>
-        <p class="page-subtitle">Wykonane z wykorzystaniem narzędzi służących do tworzenia technicznych modeli 3D oraz przeprowadzania symulacji naprężeń i płynów.</p>
+        <p class="page-subtitle">Wykonane z wykorzystaniem nowoczesnych narzędzi do tworzenia technicznych modeli 3D oraz przeprowadzania symulacji naprężeń i płynów.</p>
 
         <div class="project-accordion">
             <div class="accordion-header" onclick="toggleProject(this)">
                 <div class="header-left">
-                    <img src="img/thumb-cad.jpg" class="project-mini-thumb" alt="Miniatura CAD">
+                    <i class="fas fa-cube project_icon"></i>
+                    <!-- <img src="img/thumb-cad.jpg" class="project-mini-thumb" alt="Miniatura CAD"> -->
                     <h3>Mocowania, uchwyty</h3>
                 </div>
                 <i class="fas fa-chevron-down arrow-icon"></i>
@@ -38,13 +40,15 @@
             <div class="accordion-content">
                 <div class="content-grid">
                     <div class="project-gallery">
-                        <img src="img/tech/tech1_1.jpg" alt="Projekt części">
-                        <img src="img/tech/tech1_2.jpg" alt="Złożenie mechanizmu">
-                        <img src="img/tech/tech1_3.jpg" alt="Analiza drona FPV">
+                        <div><img src="img/tech/tech1_1.jpg" alt="Uchwyt FPV"><p class="under_work_title">Uchwyt na kamerę do drona FPV z wentylacją</p></div>
+                        <div><img src="img/tech/tech1_2.jpg" alt="Kosz na baterię"><p class="under_work_title">Kosz na baterię mocowany śrubkami</p></div>
+                        <div><img src="img/tech/tech1_3.jpg" alt="Analiza drona FPV"><p class="under_work_title">Wzmocniony uchwyt łopaty śniegowej</p></div>
                     </div>
                     <div class="project-full-description">
-                        <h4>Inżynieria Precyzyjna</h4>
-                        <p>Projektowanie części i złożonych mechanizmów w środowisku <strong>SolidWorks</strong>. Skupiam się na optymalizacji geometrii pod kątem wytrzymałościowym, realizując m.in. autorskie projekty ram dla dronów FPV.</p>
+                        <h4>Modelowanie techniczne 3D</h4>
+                        <p>Projektowanie części i złożonych mechanizmów w SolidWorks a także sprawdzanie ich wytrzymałości wykorzystując symulacje naprężeń. 
+                            
+                        </p>
                     </div>
                 </div>
             </div>
@@ -53,21 +57,26 @@
         <div class="project-accordion">
             <div class="accordion-header" onclick="toggleProject(this)">
                 <div class="header-left">
-                    <img src="img/thumb-magma.jpg" class="project-mini-thumb" alt="Miniatura 3D">
-                    <h3>Przyrostowe Technologie Wytwarzania (Druk 3D)</h3>
+                    <i class="fas fa-cogs project_icon"></i>
+                    <!--<img src="img/thumb-magma.jpg" class="project-mini-thumb" alt="Miniatura 3D">-->
+                    <h3>Formy oraz symulacje odlewnicze</h3>
                 </div>
                 <i class="fas fa-chevron-down arrow-icon"></i>
             </div>
             <div class="accordion-content">
                 <div class="content-grid">
                     <div class="project-gallery">
-                        <img src="img/tech/tech2_1.jpg" alt="Przygotowanie wydruku">
-                        <img src="img/tech/tech2_2.jpg" alt="Materiałoznawstwo">
-                        <img src="img/tech/tech2_3.jpg" alt="Gotowy komponent">
+                        <div><img src="img/tech/tech2_1.jpg" alt="Model 3D formy odlewniczej"><p class="under_work_title">Model 3D formy odlewniczej</p></div>
+                        <div><img src="img/tech/tech2_2.jpg" alt="Analiza turbina"><p class="under_work_title">Analiza krzepnięcia elementu</p></div>
+                        <div><img src="img/tech/tech2_3.jpg" alt="Cala forma"><p class="under_work_title">Analiza procesu zalewania i krzepniecia formy odlewniczej</p></div>
                     </div>
                     <div class="project-full-description">
-                        <h4>Od Modelu do Prototypu</h4>
-                        <p>Projektowanie zorientowane na Manufacturing, ze szczególnym uwzględnieniem technologii druku 3D[cite: 8]. Wykorzystuję zaawansowaną wiedzę z zakresu <strong>materiałoznawstwa tworzyw sztucznych</strong> zdobytą na AGH, aby dobierać parametry pod konkretne zastosowania techniczne[cite: 3, 8].</p>
+                        <h4>Wykonanie modelu, formy, symulacji</h4>
+                        <p>Wykonanie samego modelu to dopiero pierwszy krok do otrzymiania gotowego odlewu. Proces obejmuje przygotowanie technologii odlewniczej
+                            odpowiedniej do danego elementu po czym konieczne jest wprowadzenie poprawek do jego geometrii. Na podstawie tak przygotowanego elementu
+                            przygotowywana jest wnęka formy odlewniczej po przeprowadzeniu odpowiednich obliczeń a na sam koniec wykonuje się symulacje w celu sprawdzenia
+                            czy zadbano o każdy aspekt procesu.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -77,21 +86,22 @@
         <div class="project-accordion">
             <div class="accordion-header" onclick="toggleProject(this)">
                 <div class="header-left">
-                    <img src="img/thumb-auto.jpg" class="project-mini-thumb" alt="Miniatura Automotive">
-                    <h3>Technologie Motoryzacyjne (TiTM AGH)</h3>
+                    <i class="fas fa-industry project_icon"></i>
+                    <!--<img src="img/thumb-auto.jpg" class="project-mini-thumb" alt="Miniatura Automotive">-->
+                    <h3>Rysunki techniczne</h3>
                 </div>
                 <i class="fas fa-chevron-down arrow-icon"></i>
             </div>
             <div class="accordion-content">
                 <div class="content-grid">
                     <div class="project-gallery">
-                        <img src="img/tech/tech3_1.jpg" alt="Projekt komponentu">
-                        <img src="img/tech/tech3_2.jpg" alt="Analiza TiTM">
-                        <img src="img/tech/tech3_3.jpg" alt="Wsparcie AI">
+                        <div><img src="img/tech/tech3_1.jpg" alt="Wał stopniowy - rysunek techniczny"><p class="under_work_title">Wał stopniowy - rysunek techniczny</p></div>
+                        <div><img src="img/tech/tech3_2.jpg" alt="Koło zębate - rysunek techniczny"><p class="under_work_title">Koło zębate - rysunek techniczny</p></div>
+                        <div><img src="img/tech/tech3_3.jpg" alt="Rysunek techniczny uchwytu"><p class="under_work_title">Rysunek techniczny uchwytu</p></div>
                     </div>
                     <div class="project-full-description">
-                        <h4>Wiedza Specjalistyczna</h4>
-                        <p>Projekty realizowane w ramach kierunku <strong>Tworzywa i Technologie Motoryzacyjne</strong> na AGH[cite: 3]. Analiza technologii wykorzystywanych w nowoczesnym przemyśle automotive, wspierana narzędziami AI w celu optymalizacji procesów twórczych[cite: 9, 15].</p>
+                        <h4>Przygotowanie rysunku technicznego zgodnego z normami</h4>
+                        <p>Z wykorzystaniem programów technicznych takich jak AutoCAD i SolidWorks a także wiedzy związanej z zasadami oznaczeń wykonuję rysunki techniczne</p>
                     </div>
                 </div>
             </div>

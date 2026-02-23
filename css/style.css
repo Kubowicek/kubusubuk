@@ -67,6 +67,24 @@ body { font-family: 'Inter', sans-serif; overflow-x: hidden; scroll-behavior: sm
     display: flex; align-items: t; gap: 60px; justify-content: center;
 }
 
+/* Styl dla linku "Zobacz co już stworzyłem" */
+.cta-link {
+    font-size: 20px;
+    text-shadow: 0 0 3px rgba(255, 0, 0, 0.5);
+    text-decoration: none;
+    color: #e10600; /* Twój Racing Red */
+    transition: 0.3s;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.cta-link:hover {
+    color: #ff7171; /* Jaśniejszy odcień Racing Red przy najechaniu */
+    text-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+    transform: translateX(10px); /* Delikatne przesunięcie w prawo przy najechaniu */
+    opacity: 0.8;
+}
+
 /* Celujemy precyzyjnie w nagłówek w sekcji "W toku" */
 .work-description h3 {
     color: #e10600; /* To jest odcień "Racing Red", używany np. w brandingu F1 */

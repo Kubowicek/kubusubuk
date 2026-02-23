@@ -65,6 +65,16 @@ body {
 }
 
 /* AKORDEONY */
+.project_icon { 
+    color: #000000; 
+    font-size: 3rem; 
+    text-align: center;
+    align-content: center;
+    margin-right: 15px; 
+    height: 100px; 
+    width: 100px; 
+}
+
 .project-accordion {
     background: white;
     border: 1px solid #eee;
@@ -107,6 +117,78 @@ body {
 .project-accordion.active .arrow-icon { transform: rotate(180deg); }
 
 /* GALERIA I OPIS */
+
+/*
+SEKCJA SLIDER LEWO PRAWO
+*/
+/* Kontener całej karuzeli */
+.slider-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+/* Okno, przez które widać zdjęcia */
+.slider-window {
+    width: 100%;
+    overflow: hidden; /* Ukrywamy resztę zdjęć */
+    margin: 0 10px;
+}
+
+/* Szyna, na której stoją zdjęcia */
+.slider-track {
+    display: flex;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    gap: 15px; /* Odstęp między zdjęciami */
+}
+
+/* Pojedynczy element (1/3 szerokości okna) */
+.slider-item {
+    flex: 0 0 calc(33.33% - 10px); /* Dokładnie 3 elementy w widoku */
+    text-align: center;
+}
+
+.slider-item img {
+    width: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* Strzałki sterujące */
+.slider-arrow {
+    background: rgba(225, 6, 0, 0.8); /* Racing Red z przezroczystością */
+    color: white;
+    border: none;
+    font-size: 24px;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 10;
+    transition: 0.3s;
+    user-select: none;
+}
+
+.slider-arrow:hover {
+    background: #e10600;
+    transform: scale(1.1);
+}
+
+.slider-arrow.left { position: absolute; left: -25px; }
+.slider-arrow.right { position: absolute; right: -25px; }
+/*
+Koniec sekcji slider lewo prawo
+*/
+
+
+.under_work_title {
+    font-weight: bold;
+    text-align: center;
+    color: #000000;
+}
+
 .content-grid { padding: 30px; }
 
 .project-gallery {
