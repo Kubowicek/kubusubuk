@@ -158,26 +158,43 @@ SEKCJA SLIDER LEWO PRAWO
 }
 
 /* Strzałki sterujące */
+/* Strzałki sterujące - wersja "Clean & Tech" */
 .slider-arrow {
-    background: rgba(225, 6, 0, 0.8); /* Racing Red z przezroczystością */
-    color: white;
+    /* Resetujemy domyślny wygląd przycisku */
+    background: none;
     border: none;
-    font-size: 24px;
-    padding: 10px 15px;
+    outline: none;
+    padding: 0;
     cursor: pointer;
-    border-radius: 50%;
+    user-select: none; /* Zapobiega zaznaczaniu tekstu przy szybkim klikaniu */
+
+    /* Stylizacja samej strzałki */
+    color: #e10600; /* Twój kolor Racing Red */
+    font-size: 3.5rem; /* Duża, wyraźna strzałka */
+    line-height: 1; /* Zapobiega dziwnym odstępom pionowym */
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+    /* Pozycjonowanie */
+    position: absolute;
+    top: 50%;
     z-index: 10;
-    transition: 0.3s;
-    user-select: none;
+    /* Ważne: transform musi uwzględniać centrowanie w pionie ORAZ skalowanie */
+    transform: translateY(-50%) scale(1); 
+    /* Delikatny cień sprawia, że odcinają się od zdjęć */
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
 }
 
+/* Efekt po najechaniu - powiększenie i lekki błysk */
 .slider-arrow:hover {
-    background: #e10600;
-    transform: scale(1.1);
+    color: #ff3333; /* Troszkę jaśniejsza czerwień dla kontrastu */
+    /* Powiększamy, ale utrzymujemy wyśrodkowanie w pionie */
+    transform: translateY(-50%) scale(1.2); 
+    filter: drop-shadow(0 5px 15px rgba(225, 6, 0, 0.4)); /* Czerwona poświata */
 }
 
-.slider-arrow.left { position: absolute; left: -25px; }
-.slider-arrow.right { position: absolute; right: -25px; }
+/* Pozycje lewo/prawo zostają bez zmian */
+.slider-arrow.left { left: -23px; }
+.slider-arrow.right { right: -23px; }
 /*
 Koniec sekcji slider lewo prawo
 */
@@ -238,3 +255,23 @@ Koniec sekcji slider lewo prawo
 }
 .status-widget { margin-top: 10px; font-size: 0.8rem; color: #ccc; display: flex; align-items: center; gap: 10px;}
 .status-dot { width: 8px; height: 8px; background: #0f0; border-radius: 50%; animation: pulse 2s infinite; box-shadow: 0 0 10px #0f0; }
+
+
+
+/* Efekt unoszenia się kart projektów */
+.project-accordion {
+    transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
+                box-shadow 0.3s ease;
+}
+
+.project-accordion:hover {
+    transform: translateY(-8px); /* Karta unosi się do góry */
+    box-shadow: 0 15px 35px rgba(225, 6, 0, 0.15); /* Czerwona poświata */
+    border-color: rgba(225, 6, 0, 0.3); /* Zmiana koloru ramki */
+}
+
+/* Efekt dla ikon - niech pulsują przy najechaniu na nagłówek */
+.accordion-header:hover .project-icon {
+    transform: scale(1.15) rotate(5deg);
+    color: #ff1a1a; /* Jaśniejsza czerwień */
+}
