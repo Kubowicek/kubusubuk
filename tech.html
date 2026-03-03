@@ -28,64 +28,156 @@
         <h1 class="page-title">Projekty Techniczne</h1>
         <p class="page-subtitle">Wykonane z wykorzystaniem nowoczesnych narzędzi do tworzenia technicznych modeli 3D oraz przeprowadzania symulacji naprężeń i płynów.</p>
 
+
         <div class="project-accordion">
             <div class="accordion-header" onclick="toggleProject(this)">
                 <div class="header-left">
                     <i class="fas fa-cube project_icon"></i>
-                    <!-- <img src="img/thumb-cad.jpg" class="project-mini-thumb" alt="Miniatura CAD"> -->
                     <h3>Mocowania, uchwyty</h3>
                 </div>
                 <i class="fas fa-chevron-down arrow-icon"></i>
             </div>
             <div class="accordion-content">
                 <div class="content-grid">
-                    <div class="project-gallery">
-                        <div><img src="img/tech/tech1_1.jpg" alt="Uchwyt FPV"><p class="under_work_title">Uchwyt na kamerę do drona FPV z wentylacją</p></div>
-                        <div><img src="img/tech/tech1_2.jpg" alt="Kosz na baterię"><p class="under_work_title">Kosz na baterię mocowany śrubkami</p></div>
-                        <div><img src="img/tech/tech1_3.jpg" alt="Analiza drona FPV"><p class="under_work_title">Wzmocniony uchwyt łopaty śniegowej</p></div>
+                    
+                    <div class="slider-wrapper">
+                        <button class="slider-arrow left" onclick="moveSlider(this, -1)">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        
+                        <div class="slider-window">
+                            <div class="slider-track">
+                                <div class="slider-item pic43">
+                                    <img src="img/tech/tech1_1.jpg" alt="Uchwyt FPV">
+                                    <p class="under_work_title">Uchwyt na kamerę do drona FPV</p>
+                                </div>
+                                <div class="slider-item pic43">
+                                    <img src="img/tech/tech1_2.jpg" alt="Kosz na baterię">
+                                    <p class="under_work_title">Kosz na baterię mocowany śrubkami</p>
+                                </div>
+                                <div class="slider-item pic11">
+                                    <img src="img/tech/tech1_3.jpg" alt="Uchwyt łopaty śniegowej">
+                                    <p class="under_work_title">Wzmocniony uchwyt łopaty śniegowej</p>
+                                </div>
+                                <div class="slider-item pic169">
+                                    <img src="img/tech/tech1_4.jpg" alt="Prototyp skrzydła VTOL">
+                                    <p class="under_work_title">Prototyp skrzydła VTOL</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button class="slider-arrow right" onclick="moveSlider(this, 1)">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
                     </div>
+
                     <div class="project-full-description">
                         <h4>Modelowanie techniczne 3D</h4>
-                        <p>Projektowanie części i złożonych mechanizmów w SolidWorks a także sprawdzanie ich wytrzymałości wykorzystując symulacje naprężeń. 
-                            
-                        </p>
+                        <p>Wykonuję modele techniczne w programach CAD (SolidWorks, Fusion 360), oparte na rysunkach technicznych, skanach 3D lub określonych wymiarach.</p>
                     </div>
                 </div>
             </div>
         </div>
-<!-- Sekcja początek -->
+
+
         <div class="project-accordion">
             <div class="accordion-header" onclick="toggleProject(this)">
                 <div class="header-left">
                     <i class="fas fa-cogs project_icon"></i>
-                    <!--<img src="img/thumb-magma.jpg" class="project-mini-thumb" alt="Miniatura 3D">-->
-                    <h3>Formy oraz symulacje odlewnicze</h3>
+                    <h3>Formy i symulacje odlewnicze</h3>
                 </div>
                 <i class="fas fa-chevron-down arrow-icon"></i>
             </div>
             <div class="accordion-content">
                 <div class="content-grid">
-                    <div class="project-gallery">
-                        <div><img src="img/tech/tech2_1.jpg" alt="Model 3D formy odlewniczej"><p class="under_work_title">Model 3D formy odlewniczej</p></div>
-                        <div><img src="img/tech/tech2_2.jpg" alt="Analiza turbina"><p class="under_work_title">Analiza krzepnięcia elementu</p></div>
-                        <div><img src="img/tech/tech2_3.jpg" alt="Cala forma"><p class="under_work_title">Analiza procesu zalewania i krzepniecia formy odlewniczej</p></div>
+                    
+                    <div class="slider-wrapper">
+                        <button class="slider-arrow left" onclick="moveSlider(this, -1)">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        
+                        <div class="slider-window">
+                            <div class="slider-track">
+                                <div class="slider-item pic11">
+                                    <img src="img/tech/tech2_1.jpg" alt="Wnęka złożonej prostej formy">
+                                    <p class="under_work_title">Wnęka złożonej prostej formy jako model 3D</p>
+                                </div>
+                                <div class="slider-item pic43">
+                                    <img src="img/tech/tech2_2.jpg" alt="Proces analizy wad">
+                                    <p class="under_work_title">Proces analizy wad odlania elementu</p>
+                                </div>
+                                <div class="slider-item pic11">
+                                    <img src="img/tech/tech2_3.jpg" alt="Uchwyt łopaty śniegowej">
+                                    <p class="under_work_title">Analiza wad pełnej formy</p>
+                                </div>
+                                <div class="slider-item pic43">
+                                    <img src="img/tech/tech2_4.jpg" alt="Proces zalewania formy">
+                                    <p class="under_work_title">Proces zalewania formy</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button class="slider-arrow right" onclick="moveSlider(this, 1)">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
                     </div>
+
                     <div class="project-full-description">
                         <h4>Wykonanie modelu, formy, symulacji</h4>
-                        <p>Wykonuję modele form odlewniczych, przeprowadzam symulacje zalewania i krzepnięcia stopu wraz z jego analizą. Proces pozwala na optymalizację formy i wprowadzenie koniecznych zmian
-                            na etapie przedprodukcyjnym.
-                        </p>
+                        <p>Wykonuję modele oraz formy odlewnicze, na podstawie ich geometrii i wykorzystanego materiału potrafię przeprowadzić symulację zalewania i krzepnięcia pozwalające wykonać analizę defektów w celu wprowadzenia poprawek i optymalizacji procesu.</p>
                     </div>
                 </div>
             </div>
         </div>
-<!-- Sekcja koniec -->
- 
+
+<!--- NA PRZYSZŁE RYSUNKI TECHNICZNE SLIDER, NA RAZIE ZOSTAJE STARY-->
+        <!--<div class="project-accordion">
+                    <div class="accordion-header" onclick="toggleProject(this)">
+                        <div class="header-left">
+                            <i class="fas fa-industry project_icon"></i>
+                            <h3>Rysunki techniczne</h3>
+                        </div>
+                        <i class="fas fa-chevron-down arrow-icon"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="content-grid">
+                            
+                            <div class="slider-wrapper">
+                                <button class="slider-arrow left" onclick="moveSlider(this, -1)">
+                                    <i class="fas fa-chevron-left"></i>
+                                </button>
+                                
+                                <div class="slider-window">
+                                    <div class="slider-track">
+                                        <div class="slider-item pic43">
+                                            <img src="img/tech/tech3_1.jpg" alt="Wał stopniowy">
+                                            <p class="under_work_title">Wał stopniowy</p>
+                                        </div>
+                                        <div class="slider-item pic43">
+                                            <img src="img/tech/tech3_2.jpg" alt="Koło zębate">
+                                            <p class="under_work_title">Koło zębate</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <button class="slider-arrow right" onclick="moveSlider(this, 1)">
+                                    <i class="fas fa-chevron-right"></i>
+                                </button>
+                            </div>
+
+                            <div class="project-full-description">
+                                <h4>Przygotowanie rysunku technicznego</h4>
+                                <p>Z wykorzystaniem programów technicznych typu CAD wykonuje rysunki techniczne zgodne z normami i wymaganiami projektowymi.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>-->
+<!--- NA PRZYSZŁE RYSUNKI TECHNICZNE SLIDER, NA RAZIE ZOSTAJE STARY-->
+
         <div class="project-accordion">
             <div class="accordion-header" onclick="toggleProject(this)">
                 <div class="header-left">
                     <i class="fas fa-industry project_icon"></i>
-                    <!--<img src="img/thumb-auto.jpg" class="project-mini-thumb" alt="Miniatura Automotive">-->
                     <h3>Rysunki techniczne</h3>
                 </div>
                 <i class="fas fa-chevron-down arrow-icon"></i>
@@ -93,52 +185,25 @@
             <div class="accordion-content">
                 <div class="content-grid">
                     <div class="project-gallery">
-                        <div><img src="img/tech/tech3_1.jpg" alt="Wał stopniowy - rysunek techniczny"><p class="under_work_title">Wał stopniowy - rysunek techniczny</p></div>
-                        <div><img src="img/tech/tech3_2.jpg" alt="Koło zębate - rysunek techniczny"><p class="under_work_title">Koło zębate - rysunek techniczny</p></div>
-                        <!--<div><img src="img/tech/tech3_3.jpg" alt="Rysunek techniczny uchwytu"><p class="under_work_title">Rysunek techniczny uchwytu</p></div>-->
+                        <div><img src="img/tech/tech3_1.jpg" alt="Wał"><p class="under_work_title">Wał stopniowy - rysunek</p></div>
+                        <div><img src="img/tech/tech3_2.jpg" alt="Koło"><p class="under_work_title">Koło zębate - rysunek</p></div>
                     </div>
                     <div class="project-full-description">
-                        <h4>Przygotowanie rysunku technicznego zgodnego z normami</h4>
-                        <p>Z wykorzystaniem programów technicznych takich jak AutoCAD i SolidWorks a także wiedzy związanej z zasadami oznaczeń wykonuję rysunki techniczne</p>
+                        <h4>Przygotowanie rysunku technicznego</h4>
+                        <p>Z wykorzystaniem programów technicznych takich jak AutoCAD i SolidWorks wykonuję rysunki techniczne</p>
                     </div>
                 </div>
             </div>
         </div>
 
     </main>
-    <!--
-    <footer id="contact" class="section">
-        <h2>Znajdziesz mnie również na</h2>
-        <div class="social-icons">
-            <a href="https://www.youtube.com/@KubusubuK_1"><i class="fab fa-youtube"></i></a>
-            <a href="https://www.tiktok.com/@kubusubuk" target="_blank"><i class="fab fa-tiktok"></i></a>
-            <a href="https://www.instagram.com/kubusubuk/"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-facebook"></i></a>
-            <a href="https://www.linkedin.com/in/jakub-kubowicz-028121261/"><i class="fab fa-linkedin"></i></a>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 KubusubuK | Designed with ❤️</p>
-            <div class="status-widget">
-                <span class="status-dot"></span>
-                <span class="status-text">Niech każdy dzień przynosi nam nowe wyzwania</span>
-            </div>
-        </div>
-    </footer>
-    -->
+
     <footer id="contact" class="section">
         <div class="footer-bottom">
             <div class="footer-content-wrapper">
                 <div class="footer-left">
                     <p>&copy; 2026 KubusubuK | Designed with ❤️</p>
                 </div>
-                <!--
-                <div class="footer-center">
-                    <div class="status-widget">
-                        <span class="status-dot"></span>
-                        <span class="status-text">Niech każdy dzień przynosi nam nowe wyzwania</span>
-                    </div>
-                </div>
-                -->
                 <div class="footer-right">
                     <div class="social-icons">
                         <a href="https://www.youtube.com/@KubusubuK_1" target="_blank"><i class="fab fa-youtube"></i></a>
@@ -148,31 +213,125 @@
                         <a href="https://www.linkedin.com/in/jakub-kubowicz-028121261/" target="_blank"><i class="fab fa-linkedin"></i></a>
                     </div>
                 </div>
-
-
                 <div class="footer-center">
                     <div class="status-widget">
                         <span class="status-dot"></span>
                         <span class="status-text">Niech każdy dzień przynosi nam nowe wyzwania</span>
                     </div>
                 </div>
-
             </div>
         </div>
     </footer>
 
     <script>
-        function toggleProject(header) {
-            const accordion = header.parentElement;
-            
-            // Zamykanie innych otwartych projektów (opcjonalne)
-            // document.querySelectorAll('.project-accordion').forEach(p => {
-            //    if(p !== accordion) p.classList.remove('active');
-            // });
+    // ==========================================
+    // 1. HARMONIJKA
+    // ==========================================
+    function toggleProject(header) {
+        const accordion = header.parentElement;
+        const isActive = accordion.classList.contains('active');
+        accordion.classList.toggle('active');
 
-            accordion.classList.toggle('active');
+        // Zabezpieczenie: gdy otwieramy harmonijkę, upewniamy się, że slider łapie środek
+        if (!isActive) {
+            const track = accordion.querySelector('.slider-track');
+            if (track) {
+                setTimeout(() => {
+                    const items = track.querySelectorAll('.slider-item');
+                    if(items.length >= 3) centerTrack(track, items, 2, false);
+                }, 50);
+            }
         }
-    </script>
+    }
+// ==========================================
+    // 2. SLIDER (CENTER MODE) - FIX
+    // ==========================================
+    let isAnimating = false;
+
+    function centerTrack(track, items, targetIndex, animate) {
+        const windowWidth = track.parentElement.offsetWidth;
+        const activeItem = items[targetIndex];
+        if(!activeItem) return;
+
+        const windowCenter = windowWidth / 2;
+        const itemCenter = activeItem.offsetLeft + (activeItem.offsetWidth / 2);
+        const targetX = windowCenter - itemCenter;
+
+        track.style.transition = animate ? 'transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)' : 'none';
+        track.style.transform = `translateX(${targetX}px)`;
+    }
+
+    // Funkcja przygotowująca slider (klonuje elementy, by zawsze było co pokazać)
+    function setupSliders() {
+        document.querySelectorAll('.slider-wrapper').forEach(wrapper => {
+            const track = wrapper.querySelector('.slider-track');
+            let items = Array.from(track.querySelectorAll('.slider-item'));
+            
+            // Jeśli mamy mało zdjęć, powielamy je, żeby zapełnić boki
+            if (items.length > 0 && items.length < 6) {
+                items.forEach(item => {
+                    const clone = item.cloneNode(true);
+                    track.appendChild(clone);
+                });
+            }
+            
+            const newItems = track.querySelectorAll('.slider-item');
+            // Startujemy od środkowego elementu (np. przy 8 elementach indeks 3 lub 4)
+            centerTrack(track, newItems, Math.floor(newItems.length / 2), false);
+        });
+    }
+
+    window.addEventListener('load', setupSliders);
+
+    function moveSlider(button, direction) {
+    if (isAnimating) return;
+    
+    const wrapper = button.closest('.slider-wrapper');
+    const track = wrapper.querySelector('.slider-track');
+    let items = track.querySelectorAll('.slider-item');
+    
+    if (!track || items.length < 3) return;
+
+    isAnimating = true;
+
+    if (direction === 1) {
+        // PRAWO: Standardowo - płynny ruch do przodu
+        centerTrack(track, items, 3, true);
+
+        setTimeout(() => {
+            track.appendChild(items[0]);
+            const updatedItems = track.querySelectorAll('.slider-item');
+            centerTrack(track, updatedItems, 2, false);
+            isAnimating = false;
+        }, 500);
+
+    } else {
+        // LEWO: Trik z natychmiastową korektą pozycji
+        const lastItem = items[items.length - 1];
+        
+        // 1. Wyłącz animację na ułamek sekundy
+        track.style.transition = 'none';
+        
+        // 2. Przerzuć ostatni element na początek
+        track.prepend(lastItem);
+        
+        // 3. Zaktualizuj listę i natychmiast skoryguj pozycję (bez animacji), 
+        // żeby wizualnie slider został w tym samym miejscu mimo zmiany struktury DOM
+        const updatedItems = track.querySelectorAll('.slider-item');
+        centerTrack(track, updatedItems, 3, false); 
+
+        // 4. Wymuś przeliczenie stylów (tzw. reflow)
+        track.offsetHeight; 
+
+        // 5. Teraz puść właściwą animację do środka (indeks 2)
+        centerTrack(track, updatedItems, 2, true);
+
+        setTimeout(() => {
+            isAnimating = false;
+        }, 500);
+    }
+}
+</script>
 
 </body>
 </html>

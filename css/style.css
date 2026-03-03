@@ -190,7 +190,7 @@ body { font-family: 'Inter', sans-serif; overflow-x: hidden; scroll-behavior: sm
 
 .project-btns-container {
     display: flex;
-    gap: 80px; /* Większy odstęp między przyciskami */
+    gap: 20%; /* Większy odstęp między przyciskami */
     width: 100%;
     justify-content: center;
 }
@@ -222,7 +222,7 @@ body { font-family: 'Inter', sans-serif; overflow-x: hidden; scroll-behavior: sm
     background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('../img/sneak-peek.jpg') center/cover;
     display: flex; align-items: center; justify-content: center;
 }
-.project-btns-container { display: flex; gap: 50px; } /* Odstęp między przyciskami */
+.project-btns-container { display: flex; gap: 17%; } /* Odstęp między przyciskami */
 .big-btn {
     padding: 20px 50px; border: 2px solid white; color: white;
     text-decoration: none; text-transform: uppercase; letter-spacing: 2px;

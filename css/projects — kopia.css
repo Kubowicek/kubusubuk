@@ -1,0 +1,277 @@
+/* RESET I PODSTAWY DLA PODSTRON */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    color: #1a1a1a;
+    background-color: #f9f9f9; /* Delikatne szare tło dla kontrastu z białymi blokami */
+    padding-top: 80px; /* Miejsce na stałe menu */
+}
+
+/* NAWIGACJA (Stała, biała) */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5%;
+    background: white;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+    z-index: 1000;
+}
+
+.nav-side { flex: 1; display: flex; align-items: center; }
+.nav-center { flex: 2; display: flex; justify-content: center; gap: 30px; }
+.nav-right { flex: 1; display: flex; justify-content: flex-end; }
+
+.navbar a, .navbar .sep {
+    color: #1a1a1a;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+
+.navbar a:hover { color: #e10600; } /* Racing Red na hover */
+
+/* LISTA PROJEKTÓW */
+.projects-list-container {
+    max-width: 90%;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+.page-title {
+    text-align: center;
+    font-size: 2.2rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.page-subtitle {
+    text-align: center;
+    color: #666;
+    margin-bottom: 50px;
+}
+
+/* AKORDEONY */
+.project_icon { 
+    color: #000000; 
+    font-size: 3rem; 
+    text-align: center;
+    align-content: center;
+    margin-right: 15px; 
+    height: 100px; 
+    width: 100px; 
+}
+
+.project-accordion {
+    background: white;
+    border: 1px solid #eee;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.accordion-header {
+    padding: 20px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.header-left { display: flex; align-items: center; gap: 20px; }
+.project-mini-thumb { 
+    width: 100px; 
+    height: 100px; 
+    object-fit: cover; 
+    border-radius: 4px; 
+}
+
+.arrow-icon { color: #e10600; transition: 0.4s; font-size: 1.2rem; }
+
+/* ROZSUWANIE TREŚCI */
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-in-out;
+}
+
+.project-accordion.active .accordion-content {
+    max-height: 1500px;
+    border-top: 1px solid #eee;
+}
+
+.project-accordion.active .arrow-icon { transform: rotate(180deg); }
+
+/* GALERIA I OPIS */
+
+/*
+SEKCJA SLIDER LEWO PRAWO
+*/
+/* Kontener całej karuzeli */
+.slider-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+/* Okno, przez które widać zdjęcia */
+.slider-window {
+    width: 100%;
+    overflow: hidden; /* Ukrywamy resztę zdjęć */
+    margin: 0 10px;
+}
+
+/* Szyna, na której stoją zdjęcia */
+.slider-track {
+    display: flex;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    gap: 15px; /* Odstęp między zdjęciami */
+}
+
+/* Pojedynczy element (1/3 szerokości okna) */
+.slider-item {
+    flex: 0 0 calc(33.33% - 10px); /* Dokładnie 3 elementy w widoku */
+    text-align: center;
+}
+
+.slider-item img {
+    width: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* Strzałki sterujące */
+/* Strzałki sterujące - wersja "Clean & Tech" */
+.slider-arrow {
+    /* Resetujemy domyślny wygląd przycisku */
+    background: none;
+    border: none;
+    outline: none;
+    padding: 0;
+    cursor: pointer;
+    user-select: none; /* Zapobiega zaznaczaniu tekstu przy szybkim klikaniu */
+
+    /* Stylizacja samej strzałki */
+    color: #e10600; /* Twój kolor Racing Red */
+    font-size: 3.5rem; /* Duża, wyraźna strzałka */
+    line-height: 1; /* Zapobiega dziwnym odstępom pionowym */
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+    /* Pozycjonowanie */
+    position: absolute;
+    top: 50%;
+    z-index: 10;
+    /* Ważne: transform musi uwzględniać centrowanie w pionie ORAZ skalowanie */
+    transform: translateY(-50%) scale(1); 
+    /* Delikatny cień sprawia, że odcinają się od zdjęć */
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+}
+
+/* Efekt po najechaniu - powiększenie i lekki błysk */
+.slider-arrow:hover {
+    color: #ff3333; /* Troszkę jaśniejsza czerwień dla kontrastu */
+    /* Powiększamy, ale utrzymujemy wyśrodkowanie w pionie */
+    transform: translateY(-50%) scale(1.2); 
+    filter: drop-shadow(0 5px 15px rgba(225, 6, 0, 0.4)); /* Czerwona poświata */
+}
+
+/* Pozycje lewo/prawo zostają bez zmian */
+.slider-arrow.left { left: -23px; }
+.slider-arrow.right { right: -23px; }
+/*
+Koniec sekcji slider lewo prawo
+*/
+
+
+.under_work_title {
+    font-weight: bold;
+    text-align: center;
+    color: #000000;
+}
+
+.content-grid { padding: 30px; }
+
+.project-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.project-gallery img {
+    width: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    border-radius: 6px;
+    background: #eee;
+}
+
+.project-full-description {
+    padding-left: 20px;
+    border-left: 3px solid #e10600;
+    color: #444;
+}
+
+.project-full-description h4 {
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    color: #1a1a1a;
+}
+
+/* 7. KONTAKT I STOPKA */
+#contact { text-align: center; }
+.social-icons a { font-size: 1.8rem; margin: 0 15px; color: #b6b6b6; transition: 0.3s; }
+.social-icons a:hover { color: #ff0000; transform: scale(1.1); }
+
+/* Nowa czarna stopka na samym dole */
+.footer-bottom {
+    background-color: #000;
+    color: #fff;
+    width: 100; /* Pełna szerokość */
+    padding: 30px 0;
+    margin-top: 60px;
+    margin-bottom: -100px; /* Dociągnięcie do dołu */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.status-widget { margin-top: 10px; font-size: 0.8rem; color: #ccc; display: flex; align-items: center; gap: 10px;}
+.status-dot { width: 8px; height: 8px; background: #0f0; border-radius: 50%; animation: pulse 2s infinite; box-shadow: 0 0 10px #0f0; }
+
+
+
+/* Efekt unoszenia się kart projektów */
+.project-accordion {
+    transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
+                box-shadow 0.3s ease;
+}
+
+.project-accordion:hover {
+    transform: translateY(-8px); /* Karta unosi się do góry */
+    box-shadow: 0 15px 35px rgba(225, 6, 0, 0.15); /* Czerwona poświata */
+    border-color: rgba(225, 6, 0, 0.3); /* Zmiana koloru ramki */
+}
+
+/* Efekt dla ikon - niech pulsują przy najechaniu na nagłówek */
+.accordion-header:hover .project-icon {
+    transform: scale(1.15) rotate(5deg);
+    color: #ff1a1a; /* Jaśniejsza czerwień */
+}
